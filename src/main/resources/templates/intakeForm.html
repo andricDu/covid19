@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
     <title>MyCOVID Self Report</title>
-    <link rel="stylesheet" type="text/css" href="../static/css/semantic.min.css" th:href="@{/css/semantic.min.css}">
-    <link rel="stylesheet" type="text/css" href="../static/css/intake.css" th:href="@{/css/intake.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/semantic.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/intake.css}">
     <script
             src="https://code.jquery.com/jquery-3.1.1.min.js"
             integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
@@ -16,7 +16,10 @@
 <body>
 
 <div class="ui centered stackable container">
-    <h3 class="ui dividing header">COVID-19 Self Reporting</h3>
+    <h3 class="ui dividing header">
+        <i class="heartbeat icon"></i>
+        <div class="content">COVID-19 Self Reporting</div>
+    </h3>
 </div>
 <div class="ui centered stackable container">
     <form class="ui form" action="#" th:action="@{/intake}" th:object="${intakeForm}" method="post">
@@ -33,7 +36,7 @@
         </div>
 
         <div class="ui field">
-            <label for="severity">Severity</label>
+            <label for="severity">Severity of Symptoms</label>
             <select id="severity" th:field="*{severity}">
                 <option disabled selected value="">
                     --
@@ -42,6 +45,11 @@
                 <option value="mild">Mild</option>
                 <option value="Severe">Severe</option>
             </select>
+        </div>
+
+        <div class="ui field">
+            <label for="postalCode">Postal Code</label>
+            <input id="postalCode" type="text" th:field="*{postalCode}"/>
         </div>
 
         <div class="ui field">
