@@ -1,3 +1,6 @@
+server:
+  port: 8081
+
 # Datasource
 spring.datasource:
   driver-class-name: org.h2.Driver
@@ -7,3 +10,13 @@ spring.datasource:
   spring:
     jpa:
       database-platform: org.hibernate.dialect.H2Dialect
+
+
+keycloak:
+  realm: covid
+  auth-server-url: http://127.0.0.1:8080/auth
+  ssl-required: none
+  resource: covid19-service
+  credentials:
+    secret: 9a9384c6-e045-497a-9c2f-ebb34b978c82
+  use-resource-role-mappings: true
